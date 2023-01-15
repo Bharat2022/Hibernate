@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.maven.TablePerHierarchy">
+	<class name="Employee">
+		<id name="Empid"/>
+		<discriminator column="EmpType" type="string"></discriminator>
+		<property name="EmpName"/>
+		<subclass name="PEmployee" extends="Employee" discriminator-value="Parmanent Emp">
+			<property name="EmpSal"></property>
+		</subclass>
+		<subclass name="CEmployee" extends="Employee" discriminator-value="Contract Emp">
+			<property name="Hrate"></property>
+		</subclass>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.maven.TablePerConcreteClass">
+	<class name="Employee" table="EmpConClass">
+		<id name="Empid"/>
+		<property name="EmpName"/>
+		<union-subclass name="PEmployee" table="PEmpCon">
+			<property name="EmpSal"></property>
+		</union-subclass>
+		<union-subclass name="CEmployee" table="CEmpCon">
+			<property name="Hrate"></property>
+		</union-subclass>
+	</class>
+</hibernate-mapping>
