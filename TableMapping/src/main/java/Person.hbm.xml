@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.maven.OnetoOne.Person">
+		<id name="personId" type="int" column="PERSONID" length="5">
+			<generator class="foreign">
+				<param name="property">license</param>
+			</generator>
+		</id>
+		<property name="personName" type="java.lang.String" column="PERSONNAME" length="15"/>
+		<one-to-one name="license" class="com.maven.OnetoOne.License" cascade="all"></one-to-one>
+	</class>
+</hibernate-mapping>

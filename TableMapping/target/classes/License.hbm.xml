@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.maven.OnetoOne.License">
+		<id name="licenseId" type="int" column="LICENSEID" length="5"/>
+		<property name="issuseDate" type="java.util.Date" column="ISSUEDDATE" />
+		<property name="expireDate" type="java.util.Date" column="EXPIREDATE" />
+	</class>
+</hibernate-mapping>

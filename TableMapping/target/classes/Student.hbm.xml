@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.maven.ManytoMany.Student" table="StudentM2M">
+		<id name="sid" type="int" column="SID" length="5"/>
+		<property name="sname" type="java.lang.String" column="SNAME" />
+		<set name="courses" cascade="all" table="Student_Course">
+			<key column="Student_Id"/>
+			<many-to-many class="com.maven.ManytoMany.Course" column="Course_Id"/>
+		</set>
+	</class>
+</hibernate-mapping>

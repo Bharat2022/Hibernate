@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.maven.OnetoMany.Product" table="productO2M">
+		<id name="productId" type="int" column="PRODUCTID" length="5"/>
+		<property name="productName" type="java.lang.String" column="PPRODUCTNAME" />
+		<property name="price" type="double" column="PRICE" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.maven.OnetoMany.Dealer" table="DealerO2M">
+		<id name="dealerId" type="int" column="DEALERID" length="5"/>
+		<property name="dealerName" type="java.lang.String" column="DEALERNAME" />
+		<list name="products" cascade="all">
+			<key column="DEALERID"/>
+			<list-index column="lindex" />
+			<one-to-many class="com.maven.OnetoMany.Product"/>
+		</list>
+	</class>
+</hibernate-mapping>
